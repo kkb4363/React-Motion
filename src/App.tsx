@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import { RecoilRoot } from 'recoil';
-import styled, {createGlobalStyle, ThemeProvider} from 'styled-components';
-import { darkTheme, lightheme } from './theme';
-import ToDoList from './Components/ToDoList';
+import styled, {createGlobalStyle} from 'styled-components';
+import Motion from './Motion';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -66,27 +63,19 @@ a {
   text-decoration:none;
 }
 `
-const DarkBtn = styled.button`
-background-color:#aaaaaa;
-display:flex;
-width:100px;
-height:50px;
-align-items:center;
-font-size:20px;
-justify-content:center;
-margin-left:1225px;
-`
+
+
+
 
 function App() {
-  const [isDark,setisDark] = useState(false);
-  const toggleMode = () => {
-    setisDark((prev)=>!prev)
-  }
+  
   return (
-   <RecoilRoot>
-   <GlobalStyle/>
-   <ToDoList/>
-   </RecoilRoot>
+  <>
+  <GlobalStyle/>
+  <Motion/>
+  
+
+  </>
   );
 }
 
